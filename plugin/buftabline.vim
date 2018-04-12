@@ -45,7 +45,8 @@ function! buftabline#user_buffers() " help buffers are always unlisted, but quic
 endfunction
 
 let s:dirsep = fnamemodify(getcwd(),':p')[-1:]
-let s:centerbuf = winbufnr(0)
+let s:centerbuf = winbufnr(1)
+printf('winbuf', winbufnr(1), winbufnr(0))
 function! buftabline#render()
 	let show_num = g:buftabline_numbers == 1
 	let show_ord = g:buftabline_numbers == 2
